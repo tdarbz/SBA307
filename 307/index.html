@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <!-- The requirements listed below are absolute minimums. Ensure that your website meets these requirements before attempting to further expand your features.
+    HTML Requirements
+    Have at least three pages.
+    Keep the grid system consistent between pages as much as possible.
+    Use at least ten different HTML tags.
+    Include at least one table.
+    Include at least two forms.
+    Include at least one dropdown menu.
+    Include at least one of each of the following forms of content: 
+    Text.
+    Images.
+    GIFs.
+    (See resource links above for some free content of each of these types.)
+    CSS Requirements
+    Make use of inline, internal, and external styling.
+    Use five different CSS selectors.
+    Use colors that complement each other.
+    Coolors is one of many resources that can help you find a color palette.
+    Use Flexbox and/or the Bootstrap Grid.
+    Use at least two CSS animations. -->
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SBA Website</a>
+        <a href="page2.html">Don't Click</a>
+        <a href="page3.html">Click Here</a>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container mt-4">
+        <h1>Major Anime enegy ahead</h1>
+        <p>This is the main page</p>
+        <img id="kidLuffy" src="https://i.pinimg.com/originals/95/6b/d4/956bd4081372ba4e1962b078f6d364c9.jpg" alt="photo of luffy as a kid">
+        <img src="https://media1.tenor.com/m/1aOJTp7ltEMAAAAC/luffy-one-piece.gif" alt="Gif of Luffy grown up" height=400px width=400px>
+    </div>
+
+    <!-- Include your forms here -->
+    <div class="container mt-4">
+        <h1>Favorite Characters</h1>
+        <form>
+            <!-- Dropdown menu -->
+            <div class="form-group">
+                <label for="categorySelect">Select a Category:</label>
+                <select class="form-control" id="categorySelect" onchange="showCharacters()">
+                    <option value="anime">Anime</option>
+                    <option value="tv">TV Shows</option>
+                </select>
+            </div>
+
+            <!-- Radio buttons for anime characters -->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="character" id="goku" value="Goku">
+                <label class="form-check-label" for="goku">Goku</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="character" id="naruto" value="Naruto">
+                <label class="form-check-label" for="naruto">Naruto</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="character" id="luffy" value="Luffy">
+                <label class="form-check-label" for="luffy">Luffy</label>
+            </div>
+
+            <!-- Radio buttons for TV show characters -->
+            <div class="form-check" id="tvCharacters" style="display: none;">
+                <input class="form-check-input" type="radio" name="character" id="geralt" value="Geralt">
+                <label class="form-check-label" for="geralt">Geralt</label>
+            </div>
+            <div class="form-check" id="tvCharacters" style="display: none;">
+                <input class="form-check-input" type="radio" name="character" id="walterWhite" value="Walter White">
+                <label class="form-check-label" for="walterWhite">Walter White</label>
+            </div>
+            <div class="form-check" id="tvCharacters" style="display: none;">
+                <input class="form-check-input" type="radio" name="character" id="johnSnow" value="John Snow">
+                <label class="form-check-label" for="johnSnow">John Snow</label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+
+    <div class="container mt-4">
+        <h1>Anime Powers</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Power</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Magic</td>
+                    <td>Control different elements and or different concepts within the universe</td>
+                </tr>
+                <tr>
+                    <td>Alchemy</td>
+                    <td>Science of transmutation matter</td>
+                </tr>
+                <tr>
+                    <td>Super Saiyan</td>
+                    <td>Legendary warrior that becomes stronger which each battle</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        &copy; 2024 My Website
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <script>
+        function showCharacters() {
+            const categorySelect = document.getElementById("categorySelect");
+            const tvCharacters = document.getElementById("tvCharacters");
+            if (categorySelect.value === "tv") {
+                tvCharacters.style.display = "block";
+            } else {
+                tvCharacters.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
